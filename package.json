@@ -1,0 +1,16 @@
+{
+  "name": "digital-games-unlimited",
+  "version": "1.0.0",
+  "description": "Project 3: Interactive MERN SPA Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "team-5",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "express": "^4.18.2"
+  }
+}
