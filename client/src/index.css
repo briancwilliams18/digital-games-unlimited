@@ -1,9 +1,9 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
-  --light: #fafafa;
-  --dark: #272f32;
+  --primary: #363B40;
+  --secondary: #6D7985; 
+  --tertiary: #5F7C96;
+  --light: #89b9e7;
+  --dark: #363B40;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -11,6 +11,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Chalkduster, fantasy';
 }
 
 html,
@@ -21,7 +22,6 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Karla', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -34,7 +34,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -135,8 +134,8 @@ input:focus {
 }
 
 .container {
-  width: 85%;
-  max-width: 1200px;
+  height: 100vh;
+  width: 100vw;
   margin-left: auto;
   margin-right: auto;
 }

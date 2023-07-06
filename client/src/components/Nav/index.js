@@ -39,7 +39,7 @@ function Nav() {
           <span role="img" aria-label="shopping bag">
             🛍️
           </span>
-          -Shop-Shop
+          Digital Games Unlimited
         </Link>
       </h1>
 

@@ -1,0 +1,48 @@
+.container {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 2rem;
+    border-radius: 5px;
+  }
+  
+  .flex-row.space-between.my-2 label {
+    margin-left: .5 rem;
+    color: var(--light);
+  }
+  
+  input {
+    font-size: 1rem;
+    padding: 0.25rem;
+    border: 1px solid var(--dark);
+    outline: none;
+    border-radius: 3px;
+    transition: box-shadow 0.2s;
+    color: var(--dark);
+    background-color: var(--light);
+  }
+  
+  input:focus {
+    border: 1px solid var(--secondary);
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+    color: var(--dark);
+    background-color: var(--light);
+  }
+  
+  button {
+    font-size: 1rem;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 1px;
+    background-color: var(--secondary);
+    color: var(--light);
+  }
+  
+  button:hover {
+    opacity: .8;
+    background-color: var(--tertiary);
+    color: var(--light);
+  }
+  
