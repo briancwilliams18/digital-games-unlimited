@@ -38,7 +38,7 @@ function Login(props) {
         <h2 className="form-title">Login</h2>
         <form onSubmit={handleFormSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Email address:</label>
+            <label htmlFor="email">Email:</label>
             <input
               className="form-input"
               placeholder="youremail@test.com"
@@ -61,7 +61,8 @@ function Login(props) {
           </div>
           {error ? (
             <div>
-              <p className="error-text">The provided credentials are incorrect</p>
+              <p className="error-text">Error: Invalid Credentials
+The email or password you entered is incorrect. Please verify your login details and try again.</p>
             </div>
           ) : null}
           <div className="form-group">
