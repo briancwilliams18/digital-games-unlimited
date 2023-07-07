@@ -37,9 +37,9 @@ function Nav() {
       <h1>
         <Link to="/">
           <span role="img" aria-label="shopping bag">
-            🛍️
+          🎮 
           </span>
-          Digital Games Unlimited
+          Digital Games Unlimited🕹️
         </Link>
       </h1>
 

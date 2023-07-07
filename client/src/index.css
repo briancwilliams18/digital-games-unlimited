@@ -3,7 +3,7 @@
   --secondary: #6D7985; 
   --tertiary: #5F7C96;
   --light: #89b9e7;
-  --dark: #363B40;
+  --dark: #1f2021;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -25,7 +25,9 @@ body {
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
-  color: var(--dark);
+  color: var(--light);
+  background-color: var(--primary);
+  max-height: 100%;
 }
 
 h1,
@@ -69,7 +71,7 @@ p {
 }
 
 a {
-  color: var(--tertiary);
+  color: var(--light);
   text-decoration: none;
   font-weight: bold;
 }
@@ -79,7 +81,7 @@ a:hover {
 }
 
 header {
-  background: var(--primary);
+  background: #1f2021;
 }
 
 header a {
@@ -95,7 +97,7 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  background-color: var(--tertiary);
 }
 
 button:hover {
@@ -163,10 +165,10 @@ input:focus {
   margin-left: var(--spacing-two);
 }
 
-.my-1 {
+/* .my-1 {
   margin-top: var(--spacing-one);
   margin-bottom: var(--spacing-one);
-}
+} */
 
 .my-2 {
   margin-top: var(--spacing-two);

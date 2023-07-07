@@ -1,47 +1,60 @@
-.container {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 2rem;
-    border-radius: 5px;
-  }
-  
-  .flex-row.space-between.my-2 label {
-    color: var(--light);
-  }
-  
-  input {
-    font-size: 1rem;
-    padding: 0.25rem;
-    border: 1px solid var(--dark);
-    outline: none;
-    border-radius: 3px;
-    transition: box-shadow 0.2s;
-    color: var(--dark);
-    background-color: var(--light);
-  }
-  
-  input:focus {
-    border: 1px solid var(--secondary);
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
-    color: var(--dark);
-    background-color: var(--light);
-  }
-  
-  button {
-    font-size: 1rem;
-    padding: 0.25rem 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    margin: 0 1px;
-    background-color: var(--secondary);
-    color: var(--light);
-  }
-  
-  button:hover {
-    opacity: .8;
-    background-color: var(--tertiary);
-    color: var(--light);
-  }
-  
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container .back-link {
+  margin-top: 1rem;
+  color: var(--light);
+}
+
+.login-container .login-form {
+  width: 18rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--tertiary);
+  border-radius: 5px;
+  background-color: var(--primary);
+}
+
+.login-container .form-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.login-container .form-group {
+  margin-bottom: 1rem;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.login-container .form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  min-width: 15rem;
+}
+
+.login-container .error-text {
+  color: red;
+}
+
+.login-container .submit-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--tertiary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container .submit-button:hover {
+  background-color: #0056b3;
+}
