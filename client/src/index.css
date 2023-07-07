@@ -9,9 +9,16 @@
   --spacing-two: calc(1rem);
 }
 
+@font-face {
+  font-family: 'Luminari';
+  src: url('./assets/fonts/Luminari-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
-  font-family: 'Chalkduster, fantasy';
+  font-family: 'Luminari', fantasy;
 }
 
 html,
@@ -165,10 +172,10 @@ input:focus {
   margin-left: var(--spacing-two);
 }
 
-/* .my-1 {
+.my-1 {
   margin-top: var(--spacing-one);
   margin-bottom: var(--spacing-one);
-} */
+}
 
 .my-2 {
   margin-top: var(--spacing-two);
