@@ -1,0 +1,62 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.signup-container .back-link {
+  margin-top: 1rem;
+  color: var(--light);
+}
+
+.signup-container .signup-form {
+  width: 35rem;
+  margin-top: 2rem;
+  padding: 1.5rem 2rem; /* Adjust the padding values */
+
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form horizontally */
+}
+
+.signup-container .form-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.signup-container .form-group {
+  margin-bottom: 1rem;
+}
+
+.signup-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.signup-container .form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  min-width: 15rem;
+}
+
+
+
+.signup-container .submit-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--tertiary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-container .submit-button:hover {
+  background-color: #0056b3;
+}
