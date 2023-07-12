@@ -1,0 +1,42 @@
+.item {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 20%;
+    max-width: 30%;
+    max-height: 60%;
+    background-color: var(--secondary);
+    overflow: auto;
+    padding: .5rem;
+    box-shadow: 0 0 1rem rgba(14, 34, 248, 0.927);
+    border-bottom-left-radius: .5rem;
+  }
+  
+  .item img {
+      width: 70px;
+      margin-right: 1rem;
+    }
+  
+  .jumbotron .close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+    color: var(--light);
+  }
+  
+  
+  @media screen and (max-width: 800px) {
+    .item {
+      position: relative;
+      max-width: 100%;
+      max-height: auto;
+      box-shadow: none;
+      background-color: inherit;
+    }
+  
+    .item-closed {
+      position: relative;
+      margin: 0 auto;
+    }
+  }
