@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductItem from '../ProductItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
@@ -15,6 +15,30 @@ function ProductList() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
+  const [data2, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://api.rawg.io/api/games?page_size=100&key=e9504ab12bda4519a04e845996b47b09')
+      .then(response => response.json())
+      .then(json => setData(json))
+      .catch(error => console.error(error));
+  }, []);
+
+  // function getApi() {
+  //   let requestUrl = "https://api.rawg.io/api/games?page_size=100&key=e9504ab12bda4519a04e845996b47b09";
+  //   fetch(requestUrl)
+  //     .then(function (response) {
+  //       return response.json();
+  //     })
+  //     .then(function (data2) {
+  //       console.log(data2);
+  //       return data2;
+  //     })
+  //   }
+    // getApi();
+    // console.log(data2);
+    // let apiInfo = getApi();
+    // console.log(apiInfo);
   useEffect(() => {
     if (data) {
       dispatch({
@@ -47,21 +71,23 @@ function ProductList() {
   return (
     <div className="my-2">
       <h2>Our Products:</h2>
-      {state.products.length ? (
+      {console.log(data2)
+      }
+      {data2 ? (
         <div className="flex-row">
-          {filterProducts().map((product) => (
+          {data2.results.map((product) => (
             <ProductItem
-              key={product._id}
-              _id={product._id}
-              image={product.image}
+              key={product.id}
+              _id={product.id}
+              image={product.background_image}
               name={product.name}
-              price={product.price}
-              quantity={product.quantity}
+              price={product.rating}
+              quantity={product.playtime}
             />
           ))}
         </div>
       ) : (
-        <h3>You haven't added any video games yet!</h3>
+        <h3>Video Game are loading</h3>
       )}
       {loading ? <img src={spinner} alt="loading" /> : null}
     </div>
