@@ -1,49 +1,58 @@
-import React from 'react';
-import Auth from '../../utils/auth';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Auth from "../../utils/auth";
+import { Link } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
+import "./Nav.css";
 
 function Nav() {
-  function showNavigation() {
-    if (Auth.loggedIn()) {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/orderHistory">Order History</Link>
-          </li>
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
-          </li>
-        </ul>
-      );
-    } else {
-      return (
-        <ul className="flex-row">
-          <li className="mx-2">
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li className="mx-2">
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-      );
-    }
+  function handleLogout() {
+    Auth.logout();
+    // Additional logic if needed (e.g., redirecting to a different page)
   }
 
   return (
-    <header className="flex-row px-1">
-      <h1>
-        <Link to="/">
-          <span role="img" aria-label="shopping bag">
-          🎮 
-          </span>
-          Digital Games Unlimited🕹️
-        </Link>
-      </h1>
+    <header className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-logo">
+          <Link to="/">
+            <span className="navbar-logo-text">
+              🎮Digital Games Unlimited🕹️
+            </span>
+          </Link>
+        </div>
 
-      <nav>{showNavigation()}</nav>
+        <div className="navbar-links">
+          {Auth.loggedIn() ? (
+            <>
+              <Link to="/" className="navbar-link">
+                Home
+              </Link>
+              <Link to="/orderHistory" className="navbar-link">
+                Order History
+              </Link>
+              <Link to="/" onClick={handleLogout} className="navbar-link">
+                Logout
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/" className="navbar-link">
+                Home
+              </Link>
+              <Link to="/signup" className="navbar-link">
+                Signup
+              </Link>
+              <Link to="/login" className="navbar-link">
+                Login
+              </Link>
+            </>
+          )}
+        </div>
+
+        <div className="navbar-search">
+          <SearchBar />
+        </div>
+      </div>
     </header>
   );
 }

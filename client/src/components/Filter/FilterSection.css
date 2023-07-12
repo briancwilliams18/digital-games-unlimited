@@ -1,0 +1,26 @@
+.filter-section {
+    width: 100%;
+    background-color: var(--tertiary);
+    padding: 1rem;
+    box-sizing: border-box;
+    color: var(--dark);
+  }
+  
+  
+  .filter-section-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-section-group {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-section-checkbox {
+    margin-right: 0.5rem;
+  }
+  
+  .filter-section-label {
+    font-weight: normal;
+  }
+  

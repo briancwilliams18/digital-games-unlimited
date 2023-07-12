@@ -8,6 +8,7 @@ import './Login.css';
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
+  const [isSignup, setIsSignup] = useState(false);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -30,13 +31,34 @@ function Login(props) {
     });
   };
 
+  const handleToggleForm = () => {
+    setIsSignup(!isSignup);
+  };
+
   return (
-    <div className="login-container">
-      <Link to="/signup" className="back-link">← Go to Signup</Link>
+    <div className={`login-container ${isSignup ? 'signup-mode' : ''}`}>
+      <Link to="/signup" className="back-link">
+        ← Go to Signup
+      </Link>
+
+      <div className="slider" onClick={handleToggleForm}></div>
 
       <div className="login-form">
-        <h2 className="form-title">Login</h2>
+        <h2 className="form-title">{isSignup ? 'Signup' : 'Login'}</h2>
         <form onSubmit={handleFormSubmit}>
+          {isSignup && (
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input
+                className="form-input"
+                placeholder="Enter your name"
+                name="name"
+                type="text"
+                id="name"
+                onChange={handleChange}
+              />
+            </div>
+          )}
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
@@ -61,12 +83,16 @@ function Login(props) {
           </div>
           {error ? (
             <div>
-              <p className="error-text">Error: Invalid Credentials
-The email or password you entered is incorrect. Please verify your login details and try again.</p>
+              <p className="error-text">
+                Error: Invalid Credentials. The email or password you entered is incorrect.
+                Please verify your login details and try again.
+              </p>
             </div>
           ) : null}
           <div className="form-group">
-            <button type="submit" className="submit-button">Submit</button>
+            <button type="submit" className="submit-button">
+              {isSignup ? 'Signup' : 'Login'}
+            </button>
           </div>
         </form>
       </div>

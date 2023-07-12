@@ -1,0 +1,19 @@
+.sort-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sort-bar-label {
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .sort-bar-select {
+    padding: 0.5rem;
+  }
+  

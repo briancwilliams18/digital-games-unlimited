@@ -1,3 +1,5 @@
+/* index.css */
+
 :root {
   --primary: #363B40;
   --secondary: #6D7985; 
@@ -19,6 +21,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Luminari', fantasy;
+  letter-spacing: 0.20rem;
 }
 
 html,
@@ -33,7 +36,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--light);
-  background-color: var(--primary);
+  background-color: var(--secondary);
   max-height: 100%;
 }
 
@@ -105,7 +108,7 @@ button {
   cursor: pointer;
   margin: 0 1px;
   color: var(--dark);
-  background-color: var(--secondary);
+  background-color: var(--tertiary);
 }
 
 button:hover {
@@ -126,7 +129,10 @@ span[role="img"] {
 }
 
 form {
-  width: 40%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input {
@@ -161,11 +167,6 @@ input:focus {
 
 .flex-end {
   justify-content: flex-end;
-}
-
-.mx-1 {
-  margin-right: var(--spacing-one);
-  margin-left: var(--spacing-one);
 }
 
 .mx-2 {
@@ -212,7 +213,38 @@ input:focus {
   color: var(--error);
 }
 
+.product-list {
+  padding: 2rem;
+  text-align: center;
+}
+
+.product-list-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+.no-products-message {
+  margin-top: 2rem;
+  color: #888;
+}
+
+.spinner {
+  display: block;
+  margin: 2rem auto;
+}
+
 @media screen and (max-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
   .card {
     width: 100%;
   }

@@ -1,9 +1,9 @@
 .signup-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  height: 100vh; /* Adjust the height as needed */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .signup-container .back-link {
@@ -14,21 +14,26 @@
 .signup-container .signup-form {
   width: 35rem;
   margin-top: 2rem;
-  padding: 1.5rem 2rem; /* Adjust the padding values */
-
+  padding: 1.5rem 2rem;
   background-color: var(--primary);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center the form horizontally */
+  align-items: center;
+  border-radius: 2rem;
 }
 
 .signup-container .form-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .signup-container .form-group {
   margin-bottom: 1rem;
+  width: 160%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .signup-container label {
