@@ -9,9 +9,11 @@ function ProductItem(item) {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
-  const { image, name, _id, price, quantity } = item;
+  const { image, name, _id, price, quantity, quantity2 } = item;
 
   const { cart } = state;
+
+  console.log(quantity2)
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
@@ -42,7 +44,7 @@ function ProductItem(item) {
       </Link>
       <div>
         <div>
-          {quantity} {pluralize('item', quantity)} in stock
+          {quantity} {pluralize('item', quantity2)}
         </div>
         <span>${price}</span>
       </div>

@@ -28,7 +28,22 @@ function Detail(props) {
 
   const { products, cart } = state;
 
+  console.log(propsData);
+
   const [data2, setData] = useState(null);
+
+  let aboutUrl = "https://api.rawg.io/api/games/" + id + "?key=e9504ab12bda4519a04e845996b47b09"
+  console.log(aboutUrl);
+
+  useEffect(() => {
+    fetch(aboutUrl)
+      .then(response => response.json())
+      .then(json => setData(json))
+      .catch(error => console.error(error));
+  }, []);
+  console.log(data2);
+  console.log(location);
+  console.log(propsData);
 
   // useEffect(() => {
   //   fetch('https://api.rawg.io/api/games?page_size=100&key=e9504ab12bda4519a04e845996b47b09')
