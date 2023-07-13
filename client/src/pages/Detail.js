@@ -86,33 +86,48 @@ function Detail() {
     <>
       {currentProduct && cart ? (
         <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
-
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}
-            >
-              Remove from Cart
-            </button>
-          </p>
-
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+          <Link to="/" className="back-link">
+            ← Back to Products
+          </Link>
+            <div className="product-image">
+              <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} />
+            </div>
+  
+            <div className="product-info">
+              <div className="product-actions">
+                <h2>{currentProduct.name}</h2>
+              </div>
+  
+                <div className="buttons">
+                  <button onClick={addToCart}>Add to Cart</button>
+                  <button
+                    disabled={!cart.find((p) => p._id === currentProduct._id)}
+                    onClick={removeFromCart}
+                  >
+                    Remove from Cart
+                  </button>
+                </div>
+              </div>
+  
+              <div className="product-description">
+                <p>{currentProduct.description}</p>
+              </div>
+  
+              <div className="additional-details">
+                <p>Release Date: {currentProduct.releaseDate || 'N/A'}</p>
+                <p>Rating: {currentProduct.rating || 'N/A'}</p>
+                <p>Platforms: {currentProduct.platforms || 'N/A'}</p>
+              </div>
+            
+          
         </div>
       ) : null}
+  
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </>
   );
+  
 }
 
 export default Detail;
