@@ -33,6 +33,7 @@ function ProductItem(item) {
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
   };
+ 
 
   return (
     <div className="card px-1 py-1">

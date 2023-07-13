@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
+import Carousel from 'react-elastic-carousel';
 
 function ProductList() {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ function ProductList() {
     }
 
     return state.products.filter(
-      (product) => product.category._id === currentCategory
+      (product) => product.category && product.category._id === currentCategory
     );
   }
 
@@ -48,17 +49,31 @@ function ProductList() {
     <div className="my-2">
       <h2>Our Products:</h2>
       {state.products.length ? (
-        <div className="flex-row">
-          {filterProducts().map((product) => (
-            <ProductItem
-              key={product._id}
-              _id={product._id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              quantity={product.quantity}
-            />
-          ))}
+        <div>
+          <Carousel itemsToShow={4}>
+            {state.products.slice(0, 6).map((product) => (
+              <ProductItem
+                key={product._id}
+                _id={product._id}
+                image={product.image || 'default-image.jpg'}
+                name={product.name || 'N/A'}
+                price={product.price || 0}
+                quantity={product.quantity || 0}
+              />
+            ))}
+          </Carousel>
+          <div className="flex-row">
+            {filterProducts().map((product) => (
+              <ProductItem
+                key={product._id}
+                _id={product._id}
+                image={product.image || 'default-image.jpg'}
+                name={product.name || 'N/A'}
+                price={product.price || 0}
+                quantity={product.quantity || 0}
+              />
+            ))}
+          </div>
         </div>
       ) : (
         <h3>You haven't added any video games yet!</h3>
