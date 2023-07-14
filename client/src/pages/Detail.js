@@ -149,12 +149,19 @@ function Detail(props) {
             src={propsData.image}
             alt={currentProduct.name}
           />
+              <div className="additional-details">
+                <p>Release Date: {currentProduct.releaseDate || 'N/A'}</p>
+                <p>Rating: {currentProduct.rating || 'N/A'}</p>
+                <p>Platforms: {currentProduct.platforms || 'N/A'}</p>
+              </div>
         </div>
       ) : null}
+  
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </>
   );
+  
 }
 
 export default Detail;
