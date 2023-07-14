@@ -6,7 +6,6 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
-import Carousel from 'react-elastic-carousel';
 
 function ProductList() {
   const dispatch = useDispatch();
