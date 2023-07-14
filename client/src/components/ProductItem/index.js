@@ -9,9 +9,11 @@ function ProductItem(item) {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
-  const { image, name, _id, price, quantity } = item;
+  const { image, name, _id, price, quantity, quantity2 } = item;
 
   const { cart } = state;
+
+  console.log(quantity2)
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
@@ -37,13 +39,13 @@ function ProductItem(item) {
 
   return (
     <div className="card px-1 py-1">
-      <Link to={`/products/${_id}`}>
-        <img alt={name} src={`/images/${image}`} />
+      <Link to={`/products/${_id}`} state={item}>
+        <img alt={name} src={image} />
         <p>{name}</p>
       </Link>
       <div>
         <div>
-          {quantity} {pluralize('item', quantity)} in stock
+          {quantity} {pluralize('item', quantity2)}
         </div>
         <span>${price}</span>
       </div>
